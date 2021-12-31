@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import ClientOnly from "../components/ClientOnly";
 import "../styles/globals.css";
+import { StoreProvider } from "../utils/Store";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -12,7 +13,9 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <ClientOnly>
-      <Component {...pageProps} />;
+      <StoreProvider>
+        <Component {...pageProps} />;
+      </StoreProvider>
     </ClientOnly>
   );
 }
