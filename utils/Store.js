@@ -1,7 +1,8 @@
+import Cookies from "js-cookie";
 import { createContext, useReducer } from "react";
 
 const initialState = {
-  darkMode: true,
+  darkMode: Cookies.get("darkMode") === "ON" ? true : false,
 };
 export const Store = createContext({ initialState });
 

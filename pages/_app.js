@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ClientOnly>
       <StoreProvider>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </StoreProvider>
     </ClientOnly>
   );
